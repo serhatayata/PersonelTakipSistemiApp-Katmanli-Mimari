@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PersonelTakipDB" Class="PersonelDataClassDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-34G34T7\SQLEXPRESS01;Initial Catalog=PersonelTakipDB;Integrated Security=True" SettingsObjectName="DAL.Properties.Settings" SettingsPropertyName="PersonelTakipDBConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Aylar_Tablo" Member="Aylar_Tablos">
+    <Type Name="Aylar_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ay" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Departman_Tablo" Member="Departman_Tablos">
+    <Type Name="Departman_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DepartmanAD" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IS_Tablo" Member="IS_Tablos">
+    <Type Name="IS_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CalisanID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Baslik" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Icerik" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsBaslamaTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IsBitisTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IsDurumID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IsDurum_Tablo" Member="IsDurum_Tablos">
+    <Type Name="IsDurum_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IsDurumAd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Izin_Tablo" Member="Izin_Tablos">
+    <Type Name="Izin_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CalisanID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IzinBaslangicTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="IzinBitisTarihi" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Aciklama" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Sure" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IzinDurumID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IzinDurum_Tablo" Member="IzinDurum_Tablos">
+    <Type Name="IzinDurum_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IzinDurumAd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Maas_Tablo" Member="Maas_Tablos">
+    <Type Name="Maas_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CalisanID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tutar" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="YIL" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AY" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Personel_Tablo" Member="Personel_Tablos">
+    <Type Name="Personel_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KullaniciNo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Ad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Soyad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Resim" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmanID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PozisyonID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Maas" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DogumGunu" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Adres" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Sifre" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="isAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pozisyon_Tablo" Member="Pozisyon_Tablos">
+    <Type Name="Pozisyon_Tablo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PozisyonAd" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DepartmanID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>
